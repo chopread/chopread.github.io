@@ -1,7 +1,5 @@
 # ─────────────────────────────────────────────────────────────
 # ChopRead — site configuration
-# Hosted at: https://techdayo.github.io  (GitHub Pages user site)
-#
 # To switch to a custom domain later (recommended — see README):
 #   1. set `url` below to "https://chopread.com"
 #   2. add a file named `CNAME` at the repo root containing: chopread.com
@@ -17,7 +15,7 @@ author: ChopRead
 email: ""
 
 # User/organization GitHub Pages site -> baseurl is empty, url is the root.
-url: "https://techdayo.github.io"
+url: "https://chopread.com"
 baseurl: ""
 
 # Brand
