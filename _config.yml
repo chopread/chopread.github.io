@@ -1,0 +1,60 @@
+# ─────────────────────────────────────────────────────────────
+# ChopRead — site configuration
+# Hosted at: https://techdayo.github.io  (GitHub Pages user site)
+#
+# To switch to a custom domain later (recommended — see README):
+#   1. set `url` below to "https://chopread.com"
+#   2. add a file named `CNAME` at the repo root containing: chopread.com
+#   3. point the domain's DNS at GitHub Pages
+# ─────────────────────────────────────────────────────────────
+
+title: ChopRead
+tagline: Reading through the chop.
+description: >-
+  Market-structure intelligence for retail traders. We show you the machinery —
+  dealer flow, gamma, and the traps set in plain sight — so you stop being the easy money.
+author: ChopRead
+email: ""
+
+# User/organization GitHub Pages site -> baseurl is empty, url is the root.
+url: "https://techdayo.github.io"
+baseurl: ""
+
+# Brand
+brand:
+  voice: "Ch0plife — enjoy life, snipe the chop."
+  product_stocks: "ChopRead"   # stocks & multi-day options arm
+  product_0dte: "ChopSniper"   # 0DTE arm
+
+# Build
+markdown: kramdown
+permalink: /notes/:title/
+timezone: America/New_York
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+# Feed (jekyll-feed)
+feed:
+  path: feed.xml
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - .github

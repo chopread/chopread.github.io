@@ -1,0 +1,29 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">ChopRead</div>
+        <p style="max-width: 34ch; margin: 0.6rem 0 0; color: var(--ink-soft);">
+          Ch0plife — enjoy life, snipe the chop. Market-structure intelligence,
+          written for the trader on the other side of the screen.
+        </p>
+      </div>
+      <div class="footer-links">
+        <a href="{{ '/' | relative_url }}">Notes</a>
+        <a href="{{ '/about/' | relative_url }}">About</a>
+        <a href="{{ '/methodology/' | relative_url }}">Methodology</a>
+        <a href="{{ '/methodology/#disclaimer' | relative_url }}">Disclaimer</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a>
+      </div>
+    </div>
+
+    <p class="disclaimer" id="disclaimer">
+      ChopRead is published for general informational and educational purposes only. Nothing here is
+      investment advice, nor a recommendation or solicitation to buy or sell any security, option, or
+      other financial instrument. We do not provide personalized advice and do not know your individual
+      circumstances. Options and short-dated strategies carry substantial risk, including total loss.
+      Past performance is not indicative of future results. Consult a licensed financial professional
+      before making any decision. &copy; {{ site.time | date: '%Y' }} ChopRead. All rights reserved.
+    </p>
+  </div>
+</footer>

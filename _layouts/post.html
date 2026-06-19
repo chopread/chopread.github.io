@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article class="column">
+  <div class="article-head">
+    {% if page.kind %}<span class="eyebrow">{{ page.kind }}</span>{% endif %}
+    <h1>{{ page.title }}</h1>
+    <div class="article-meta">
+      {{ page.date | date: "%B %-d, %Y" }}
+      {% if page.read %} &nbsp;·&nbsp; {{ page.read }}{% endif %}
+      {% if page.ticker %} &nbsp;·&nbsp; {{ page.ticker }}{% endif %}
+    </div>
+    {% if page.dek %}<p class="dek">{{ page.dek }}</p>{% endif %}
+  </div>
+
+  <div class="article-body">
+    {{ content }}
+  </div>
+</article>

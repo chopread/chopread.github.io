@@ -1,0 +1,39 @@
+---
+layout: default
+title: ChopRead — Reading through the chop
+description: Market-structure intelligence for retail traders. Dealer flow, gamma, and the traps set in plain sight.
+---
+
+<section class="column hero">
+  <div class="chopfig">
+    <svg width="100%" height="92" viewBox="0 0 640 92" fill="none" aria-hidden="true" preserveAspectRatio="none">
+      <polyline points="0,64 32,30 64,72 96,18 128,60 160,12 192,52 224,22 256,70 288,28 320,58 352,16 384,66 416,24 448,56 480,14 512,62 544,30 576,70 608,26 640,50"
+                stroke="#16181D" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <line x1="0" y1="46" x2="640" y2="46" stroke="#C2790A" stroke-width="2"/>
+      <circle cx="352" cy="46" r="5" fill="#C2790A"/>
+      <circle cx="352" cy="46" r="5" fill="none" stroke="#E8E8E2" stroke-width="2"/>
+    </svg>
+  </div>
+
+  <h1>The market was built to harvest predictable money.</h1>
+  <p>ChopRead shows you the machinery — dealer hedging, gamma, and the traps set in plain sight — so you stop being the easy money and start reading through the chop.</p>
+</section>
+
+<section class="column">
+  <span class="eyebrow">The Notes</span>
+  <ul class="note-list" style="margin-top: 1.4rem;">
+    {% for post in site.posts %}
+    <li class="note-item">
+      <a href="{{ post.url | relative_url }}">
+        <div class="note-meta">
+          {% if post.kind %}<span>{{ post.kind }}</span>{% endif %}
+          <span>{{ post.date | date: "%b %-d, %Y" }}</span>
+          {% if post.read %}<span>{{ post.read }}</span>{% endif %}
+        </div>
+        <h2 class="note-title">{{ post.title }}</h2>
+        {% if post.dek %}<p class="note-dek">{{ post.dek }}</p>{% endif %}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>

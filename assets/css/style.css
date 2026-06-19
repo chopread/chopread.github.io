@@ -1,0 +1,248 @@
+/* ===================================================================
+   ChopRead — stylesheet
+   Concept: signal cutting through noise. Editorial, technical, no hype.
+   Palette: blue-black ink on cool bone, one amber accent (rejects the
+   red/green trading binary on purpose). Display: Fraunces. Body:
+   Newsreader. Data/labels: IBM Plex Mono.
+   =================================================================== */
+
+:root {
+  --ink:        #16181D;
+  --ink-soft:   #565B54;
+  --ink-faint:  #888C82;
+  --paper:      #E8E8E2;
+  --paper-raised:#F1F1EC;
+  --accent:     #C2790A;   /* marigold / signal */
+  --accent-deep:#9A5E06;
+  --rule:       #CFCFC6;
+  --alert:      #A8322A;   /* used ONLY for genuine risk callouts */
+
+  --maxw: 64ch;
+  --display: "Fraunces", Georgia, serif;
+  --body:    "Newsreader", Georgia, serif;
+  --mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 1.18rem;
+  line-height: 1.62;
+  font-weight: 380;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ---- Layout shell ---- */
+.wrap { width: 100%; max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+.column { max-width: var(--maxw); margin: 0 auto; }
+
+/* ===================================================================
+   Masthead
+   =================================================================== */
+.masthead {
+  border-bottom: 1.5px solid var(--ink);
+  padding: 1.6rem 0 1.4rem;
+  margin-bottom: 3rem;
+}
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.brandmark { display: flex; align-items: center; gap: 0.85rem; text-decoration: none; color: var(--ink); }
+.brandmark svg { display: block; flex: 0 0 auto; }
+.wordmark { font-family: var(--display); font-weight: 600; font-size: 1.85rem; letter-spacing: -0.01em; line-height: 1; }
+.wordmark b { font-weight: 600; }
+.wordmark .read { color: var(--accent); font-style: italic; }
+
+.nav { font-family: var(--mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; display: flex; gap: 1.4rem; }
+.nav a { color: var(--ink-soft); text-decoration: none; padding-bottom: 2px; border-bottom: 1px solid transparent; }
+.nav a:hover { color: var(--ink); border-bottom-color: var(--accent); }
+
+.tagline-strip {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-soft);
+  margin-top: 0.9rem;
+}
+.tagline-strip .sep { color: var(--accent); padding: 0 0.5rem; }
+
+/* ===================================================================
+   Home hero
+   =================================================================== */
+.hero { margin: 2.5rem 0 3.5rem; }
+.hero h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 0 0 1rem;
+  max-width: 18ch;
+}
+.hero p {
+  font-size: 1.3rem;
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: 0;
+}
+.hero .chopfig { margin: 0 0 2rem; }
+
+/* ===================================================================
+   Eyebrow labels (structure = information: the label tells you the
+   KIND of note — Desk Note, Case Study, Research Drop)
+   =================================================================== */
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--accent-deep);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+.eyebrow::before {
+  content: "";
+  width: 1.4rem; height: 2px;
+  background: var(--accent);
+  display: inline-block;
+}
+
+/* ===================================================================
+   Post list (home)
+   =================================================================== */
+.note-list { list-style: none; padding: 0; margin: 0; }
+.note-item { border-top: 1px solid var(--rule); padding: 1.8rem 0; }
+.note-item:last-child { border-bottom: 1px solid var(--rule); }
+.note-item a { text-decoration: none; color: var(--ink); display: block; }
+.note-item a:hover .note-title { color: var(--accent-deep); }
+.note-meta { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.08em; color: var(--ink-faint); text-transform: uppercase; margin-bottom: 0.5rem; display: flex; gap: 0.9rem; flex-wrap: wrap; }
+.note-title { font-family: var(--display); font-weight: 600; font-size: 1.7rem; line-height: 1.12; letter-spacing: -0.01em; margin: 0 0 0.4rem; transition: color 0.15s ease; }
+.note-dek { color: var(--ink-soft); font-size: 1.08rem; margin: 0; max-width: 58ch; }
+
+/* ===================================================================
+   Article
+   =================================================================== */
+.article-head { margin: 1rem 0 2.6rem; }
+.article-head h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 0.8rem 0 0.6rem;
+}
+.article-meta { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.06em; color: var(--ink-faint); text-transform: uppercase; }
+.dek { font-size: 1.28rem; line-height: 1.5; color: var(--ink-soft); margin: 1rem 0 0; max-width: 52ch; }
+
+.article-body { font-size: 1.2rem; }
+.article-body > * + * { margin-top: 1.4rem; }
+.article-body p { margin: 0; }
+.article-body h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+  margin-top: 2.8rem;
+  line-height: 1.18;
+}
+.article-body h3 { font-family: var(--display); font-weight: 600; font-size: 1.28rem; margin-top: 2rem; }
+.article-body a { color: var(--accent-deep); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.article-body strong { font-weight: 600; }
+.article-body em { font-style: italic; }
+
+.article-body blockquote {
+  margin: 1.8rem 0;
+  padding: 0.2rem 0 0.2rem 1.4rem;
+  border-left: 2px solid var(--accent);
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+.article-body code {
+  font-family: var(--mono);
+  font-size: 0.86em;
+  background: var(--paper-raised);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+}
+
+/* Data callout — a small mono block for levels/figures (the "tape" voice) */
+.figline {
+  font-family: var(--mono);
+  font-size: 0.84rem;
+  letter-spacing: 0.02em;
+  background: var(--paper-raised);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  padding: 0.9rem 1.1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  overflow-x: auto;
+}
+.figline .k { color: var(--ink-faint); }
+
+/* Risk callout — the one place the alert color appears */
+.risk {
+  border: 1px solid var(--alert);
+  border-left: 3px solid var(--alert);
+  background: rgba(168,50,42,0.05);
+  padding: 0.9rem 1.1rem;
+  font-size: 1.04rem;
+}
+.risk .label { font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--alert); display: block; margin-bottom: 0.3rem; }
+
+/* ===================================================================
+   Footer
+   =================================================================== */
+.site-footer {
+  margin-top: 5rem;
+  border-top: 1.5px solid var(--ink);
+  padding: 2.4rem 0 3rem;
+  font-size: 0.95rem;
+  color: var(--ink-soft);
+}
+.footer-grid { display: flex; justify-content: space-between; gap: 2rem; flex-wrap: wrap; }
+.footer-brand { font-family: var(--display); font-size: 1.3rem; font-weight: 600; color: var(--ink); }
+.footer-links { font-family: var(--mono); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.1em; line-height: 2; }
+.footer-links a { color: var(--ink-soft); text-decoration: none; display: block; }
+.footer-links a:hover { color: var(--accent-deep); }
+.disclaimer {
+  margin-top: 2rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  line-height: 1.7;
+  color: var(--ink-faint);
+  letter-spacing: 0.01em;
+  max-width: 70ch;
+}
+
+/* ===================================================================
+   Responsive
+   =================================================================== */
+@media (max-width: 640px) {
+  body { font-size: 1.1rem; }
+  .article-body { font-size: 1.12rem; }
+  .nav { gap: 1rem; }
+  .wordmark { font-size: 1.5rem; }
+  .footer-grid { flex-direction: column; }
+}
+
+/* Accessibility floor */
+a:focus-visible, .nav a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+}
