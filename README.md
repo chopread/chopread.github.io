@@ -31,8 +31,8 @@ chopread-site/
 
 ## Publish it (first time)
 
-1. Create a repo and push these files (for your existing user site, that's the
-   `techdayo.github.io` repo; the files go at the repo **root**, not in a subfolder).
+1. Create a repo and push these files (for a user/organization site, that's the
+   `<username>.github.io` repo; the files go at the repo **root**, not in a subfolder).
 2. In the repo: **Settings → Pages → Build and deployment → Source: "GitHub Actions."**
 3. Push to `main`. The workflow builds and deploys automatically. Done.
 
@@ -74,17 +74,9 @@ Design helpers you can use inside a post:
 
 ---
 
-## Two things to decide before you go public
+## Before you publish
 
-**1. The identity link.** This site is set to live at `techdayo.github.io`, but
-"techdayo" points straight back to you — which undercuts the anonymity you wanted for
-the brand. The clean fix is a **custom domain**: point `chopread.com` at the Pages site
-and the GitHub URL stops mattering. To do it: set `url: "https://chopread.com"` in
-`_config.yml`, add a file named `CNAME` at the repo root containing just `chopread.com`,
-and point the domain's DNS at GitHub Pages. (A separate GitHub org named `chopread` is
-the alternative, but the custom domain is simpler and you'll want the domain anyway.)
-
-**2. Verify the figures before publishing.** The two starter posts use real, dated
+**Verify the figures.** The two starter posts use real, dated
 market-structure facts (0DTE ≈ 63% of SPX volume, Feb 2026; the late-Feb negative-gamma
 down day). Confirm the exact numbers against a primary source (e.g. the Cboe monthly
 volume report) and adjust any specific figure before these go live. The *mechanics* in
